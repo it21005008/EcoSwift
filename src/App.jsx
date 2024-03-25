@@ -1,11 +1,13 @@
 import {BrowserRouter,Routes , Route} from 'react-router-dom'
 import Home from './pages/home'
-import aboutus from './pages/Aboutus'
-import signin from './pages/signin'
-import signup from './pages/signup'
+import Aboutus from './pages/Aboutus'
+import Signin from './pages/signin'
+import Signup from './pages/signup'
 import Dashboard from './pages/Dashboard'
-import event from './pages/event'
-import shop from './pages/shop'
+import Event from './pages/event'
+import Shop from './pages/shop'
+import Contactus from './pages/contactUs'
+
 
 
 export default function main() {
@@ -13,14 +15,14 @@ export default function main() {
     <BrowserRouter>
     
      <Routes>
-      <Route path ="/" element={<home/>} />
-      <Route path ="/aboutus" element={<aboutus/>} />
-      <Route path ="/contactus" element={<contactus/>} />
+      <Route path ="/" element={<Home/>} />
+      <Route path ="/aboutus" element={<Aboutus/>} />
+      <Route path ="/contactus" element={<Contactus/>} />
       <Route path ="/Dashboard" element={<Dashboard/>} />
-      <Route path ="/event" element={<event/>} />
-      <Route path ="/signin" element={<signin/>} />
-      <Route path ="/signup" element={<signup/>} />
-      <Route path ="/shop" element={<shop/>} />
+      <Route path ="/event" element={<Event/>} />
+      <Route path ="/signin" element={<Signin/>} />
+      <Route path ="/signup" element={<Signup/>} />
+      <Route path ="/shop" element={<Shop/>} />
 
 
 
