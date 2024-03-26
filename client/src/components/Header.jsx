@@ -1,6 +1,7 @@
 import { Button, Navbar, TextInput } from 'flowbite-react';
 import { Link, useLocation } from 'react-router-dom';
 import {FaMoon} from 'react-icons/fa';
+import logo from '../assets/images/logo2.png';
 
 
 
@@ -10,12 +11,11 @@ export default function Header() {
     <Navbar className='border-b-2'>
       <Link
         to='/'
-        className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
+        className='self-center whitespace-nowrap '
       >
-        <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-          ECO
-        </span>
-        SWIFT
+        <Link to="/" className='self-center whitespace-nowrap '>
+        <img src={logo} width={100} height={100}></img>
+        </Link>
       </Link>
              
           <div className="flex gap-2  md:order-2">
