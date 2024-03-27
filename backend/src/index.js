@@ -1,6 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 require("dotenv").config();
+import mongoose from 'mongoose';
+
+mongoose.connect(process.env.MONGO_CONNECTION_STRING);
+
 
 const app = express();
 app.use(express.json());
@@ -13,5 +17,5 @@ app.get("/api/test", async(req, res) => {
 
 
 app.listen(3000, () => {
-    console.log("Server is running on 3000")
+    console.log("Server is running on localhost:3000")
 });
