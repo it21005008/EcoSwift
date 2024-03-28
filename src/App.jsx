@@ -10,6 +10,7 @@ import Shop from './pages/shop'
 import Contactus from './pages/contactUs'
 import News from './pages/news'
 import Header from './components/Header'
+import Footer from './components/footer'
 
 
 
@@ -34,7 +35,9 @@ export default function main() {
 
 
      </Routes>
-    
+
+     
+    <Footer/>
     </BrowserRouter>
   )
 }

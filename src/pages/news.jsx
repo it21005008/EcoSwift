@@ -1,7 +1,9 @@
-import React from 'react'
-
-export default function news() {
+export default function News() {
   return (
-    <div>news</div>
-  )
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', minHeight: '100vh' }}>
+      <div>
+        Our latest news
+      </div>
+    </div>
+  );
 }
