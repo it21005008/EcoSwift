@@ -31,7 +31,7 @@ export default function FooterCom() {
                 </Footer.Link>
 
                 <Footer.Link
-                  href='/pages/News'
+                  href='/News'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -39,7 +39,7 @@ export default function FooterCom() {
                 </Footer.Link>
 
                 <Footer.Link
-                  href='/pages/shop'
+                  href='/shop'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -58,7 +58,7 @@ export default function FooterCom() {
                 
 
                 <Footer.Link
-                  href='/pages/events'
+                  href='/events'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -66,7 +66,7 @@ export default function FooterCom() {
                 </Footer.Link>
 
                 <Footer.Link
-                  href='/pages/aboutus'
+                  href='/aboutus'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -74,7 +74,7 @@ export default function FooterCom() {
                 </Footer.Link>
 
                 <Footer.Link
-                  href='/pages/contactus'
+                  href='/contactus'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -88,8 +88,8 @@ export default function FooterCom() {
             <div>
               <Footer.Title title='' />
               <Footer.LinkGroup col>
-                <Footer.Link href='#'>Privacy Policy</Footer.Link>
-                <Footer.Link href='#'>Terms &amp; Conditions</Footer.Link>
+                <Footer.Link href='/privacypolicy'>Privacy Policy</Footer.Link>
+                <Footer.Link href='/TermsConditions'>Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>

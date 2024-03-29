@@ -9,6 +9,8 @@ import ContactUs from './pages/ContactUs'
 import Profile from './pages/Profile'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsConditions from './pages/TermsConditions'
 import Header from './components/Header'
 import Footer from './components/Footer';
 
@@ -31,6 +33,8 @@ export default function App() {
        <Route path="/AboutUs" element={<AboutUs />} />
        <Route path="/ContactUs" element={<ContactUs />} />
        <Route path="/Profile" element={<Profile />} />
+       <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+       <Route path="/TermsConditions" element={<TermsConditions />} />
        
 
 
