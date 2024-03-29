@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
+import PrivateRoute from './components/PrivateRoute'
 import Dashboard from './pages/Dashboard'
 import News from './pages/News';
 import Shop from './pages/Shop'
@@ -26,7 +27,9 @@ export default function App() {
        <Route path="/" element={<Home />} />
        <Route path="/SignIn" element={<SignIn />} />
        <Route path="/SignUp" element={<SignUp />} />
-       <Route path="/Dashboard" element={<Dashboard />} />
+       <Route element={<PrivateRoute />}>
+          <Route path='/dashboard' element={<Dashboard />} />
+        </Route>
        <Route path="/News" element={<News />} />
        <Route path="/Shop" element={<Shop />} />
        <Route path="/Events" element={<Events />} />
