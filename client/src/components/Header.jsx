@@ -49,7 +49,7 @@ export default function Header() {
                   <Dropdown.Item>Profile</Dropdown.Item>
                  </Link>
                 <Dropdown.Divider />
-                <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>
+                <Dropdown.Item >Sign out</Dropdown.Item>
 
               </Dropdown>
 
