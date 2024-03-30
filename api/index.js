@@ -1,8 +1,13 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-mongoose.connect('mongodb+srv://ECOSWIFT:ECOSWIFT@ecoswift.8hegwtb.mongodb.net/ECOSWIFT?retryWrites=true&w=majority&appName=ECOSWIFT')
-    .then(() => {
+
+dotenv.config();
+
+mongoose
+.connect(process.env.MONGO)
+.then(() => {
         console.log('Connected to MongoDB');
     });
 
