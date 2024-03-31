@@ -1,4 +1,4 @@
-import { useState } from 'react'
+/*import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -32,4 +32,28 @@ function App() {
   )
 }
 
-export default App
+export default App*/
+
+
+
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Events from './pages/Events'
+import Contact from './pages/Contact'
+
+
+
+export default function App() {
+  return (
+    <BrowserRouter>
+     <Routes>
+
+
+      <Route path="/Events" element={<Events/>} />
+      <Route path='/Contact' element={<Contact/>}/>//CreateContact
+     
+       
+
+     </Routes>
+    </BrowserRouter>
+  )
+}

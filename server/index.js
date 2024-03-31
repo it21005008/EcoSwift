@@ -2,23 +2,28 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-const app = express()
-app.use(express.json())
-app.use(cors())
+const port = 8080;
+const uri =
+    "mongodb+srv://ECOSWIFT:ECOSWIFT@ecoswift.8hegwtb.mongodb.net/?retryWrites=true&w=majority&appName=ECOSWIFT";
 
+//DB connection
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.once("open", () => {
+    console.log("MongoDB Connected");
+});
 
-// MongoDB connection URI
-const mongoURI = 'mongodb+srv://ECOSWIFT:ECOSWIFT@ecoswift.8hegwtb.mongodb.net/?retryWrites=true&w=majority&appName=ECOSWIFT';
-// Connect to MongoDB
-mongoose.connect(mongoURI)
-    .then(() => {
-        console.log('Connected to MongoDB');
-        // Start your application logic here
-    })
-    .catch((err) => {
-        console.error('Failed to connect to MongoDB:', err);
-    });
-app.listen(3550, () => {
-    console.log("server is running on port 4000")
+app.get("/", (req, res) => {
+    res.send("Api running");
+});
+
+//import routes for Products and Users
+app.use("/api/events", require("./routes/Event.route"));
+app.use("/api/contacts", require("./routes/Contact.route"));
+
+app.listen(port, () => {
+    console.log("Server is starting on port " + port);
 });
