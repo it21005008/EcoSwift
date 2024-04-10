@@ -11,14 +11,6 @@ const eventSchema = new Schema({
     pickupTime: String,
     pickupDate: String,
 
-    //name: String,
-    //address: String,
-    //mobile: String,
-    //email: String,
-    //service: String,
-    //bin: String,
-    //date: String,
-    //time: String
 
 
 });

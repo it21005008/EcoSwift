@@ -7,7 +7,8 @@ const contactSchema = new Schema({
     firstName: String,
     lastName: String,
     email: String,
-    mobile: String,
+    //mobile: String,
+    mobile: Number,
     message: String,
 
 });
