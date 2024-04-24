@@ -11,15 +11,16 @@ import "react-datepicker/dist/react-datepicker.css";
 
 
 
-
-
-
-
 export default function App() {
-  return (
+
+
+
+
+ return (
     <BrowserRouter>
      <div><Toaster/></div>
       <Routes>
+
         <Route path="/Events" element={<Events />} />
         <Route path='/Contact' element={<Contact />} />
       </Routes>
