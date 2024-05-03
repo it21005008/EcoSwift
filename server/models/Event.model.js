@@ -3,16 +3,36 @@ const { Schema } = mongoose;
 
 
 const eventSchema = new Schema({
-    fullName: String,
-    address: String,
-    email: String,
-    serviceType: String,
-    binSize: String,
-    pickupTime: String,
-    pickupDate: String,
 
 
-
+    fullName: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    serviceType: {
+        type: String,
+        required: true
+    },
+    binSize: {
+        type: String,
+        required: true
+    },
+    pickupTime: {
+        type: String,
+        required: true
+    },
+    pickupDate: {
+        type: String,
+        required: true
+    }
+}, {
+    timestamps: true
 });
 
-module.exports = Event = mongoose.model("Event", eventSchema);
+const Event = mongoose.model("Event", eventSchema);
+
+module.exports = Event;

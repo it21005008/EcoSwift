@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const EventRouter = require("./routes/Event.route")
 
 const app = express();
 app.use(cors());
@@ -21,8 +22,13 @@ app.get("/", (req, res) => {
 });
 
 //import routes for Products and Users
-app.use("/api/events", require("./routes/Event.route"));
+// app.use("/api/events", require("./routes/Event.route"));
+
+app.use("/api/events", EventRouter)
+
+
 app.use("/api/contacts", require("./routes/Contact.route"));
+
 
 app.listen(port, () => {
     console.log("Server is starting on port " + port);
