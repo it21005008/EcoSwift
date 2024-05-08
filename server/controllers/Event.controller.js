@@ -32,29 +32,40 @@ const addEvent = (req, res) => {
         });
 };
 
-
 //get events details
 const getEvents = (req, res) => {
     Event.find()
         .then((Event) => res.json(Event))
-        .catch((err) => res.json(err))
+        .catch((err) => res.json(err));
 };
 
-
-//get a specific event details
-// const getEvent = async(req, res) => {
-//     const productId = req.params.id;
-
-//     try {
-//         const event = await Event.findById(eventId);
-//         res.json(event);
-//     } catch (error) {
-//         res.status(400).json(error);
-//     }
-// };
-
+// get a specific event details
+const getEvent = (req, res) => {
+    Event.findById(req.params.id)
+        .then((Event) => res.status(200).json(Event))
+        .catch((err) => {
+            res.status(400).json({ message: err });
+        });
+};
 
 //update relevant event details
+const updateEvent = (req, res) => {
+    Event.findById(req.params.id)
+        .then((Event) => {
+            Event.fullName = req.body.fullName;
+            Event.serviceType = req.body.serviceType;
+            Event.binSize = req.body.binSize;
+            Event.pickupTime = req.body.pickupTime;
+            Event.pickupDate = req.body.pickupDate;
+
+            Event.save()
+                .then(() => res.status(200).json("Event updated"))
+                .catch((err) => res.status(400).json({ Error: err }));
+        })
+
+    .catch((err) => res.status(400).json({ Erro: err }));
+};
+
 // const updateEvent = async(req, res) => {
 //     const eventId = req.params.id;
 
@@ -94,6 +105,12 @@ const getEvents = (req, res) => {
 // };
 
 //remove unnesessary events
+const deleteEvent = (req, res) => {
+    Event.findByIdAndDelete(req.params.id)
+        .then(() => res.status(200).json("Event deleted"))
+        .catch((err) => res.status(400).json({ Error: err }));
+};
+
 // const removeEvent = async(req, res) => {
 //     const eventId = req.params.id;
 
@@ -114,5 +131,7 @@ const getEvents = (req, res) => {
 module.exports = {
     addEvent,
     getEvents,
-
+    getEvent,
+    updateEvent,
+    deleteEvent,
 };
