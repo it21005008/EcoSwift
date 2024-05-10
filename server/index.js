@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const EventRouter = require("./routes/Event.route")
+// const EventRouter = require("./routes/Event.route")
 
 const app = express();
 app.use(cors());
@@ -17,17 +17,14 @@ mongoose.connection.once("open", () => {
     console.log("MongoDB Connected");
 });
 
-app.get("/", (req, res) => {
-    res.send("Api running");
-});
+// app.get("/", (req, res) => {
+//     res.send("Api running");
+// });
 
-//import routes for Products and Users
-// app.use("/api/events", require("./routes/Event.route"));
 
+//import routes for Events
+const EventRouter = require("./routes/Event.route")
 app.use("/api/events", EventRouter)
-
-
-app.use("/api/contacts", require("./routes/Contact.route"));
 
 
 app.listen(port, () => {

@@ -4,22 +4,19 @@ const router = express.Router();
 const {
     addEvent,
     getEvents,
-
+    getEvent,
+    updateEvent,
+    deleteEvent,
 } = require("../controllers/Event.controller");
-
-
-
-//REST API for Events
-//call relevant controller function according to the request type
 
 router.get("/", getEvents);
 
-// router.get("/:id", getEvent);
+router.post("/", addEvent);
 
-router.post("/add", addEvent);
+router.get("/:id", getEvent);
 
-// router.put("/:id", updateEvent);
+router.put("/edit/:id", updateEvent);
 
-// router.delete("/:id", removeEvent);
+router.delete("/delete/:id", deleteEvent);
 
 module.exports = router;

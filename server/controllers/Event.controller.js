@@ -5,24 +5,22 @@ const addEvent = (req, res) => {
     const {
         fullName,
         address,
-        email,
         serviceType,
         binSize,
         pickupTime,
         pickupDate,
     } = req.body;
 
-    const event = new Event({
+    const newEvent = new Event({
         fullName,
         address,
-        email,
         serviceType,
         binSize,
         pickupTime,
         pickupDate,
     });
 
-    event
+    newEvent
         .save()
         .then(() => {
             res.json("Event Added");
@@ -53,6 +51,7 @@ const updateEvent = (req, res) => {
     Event.findById(req.params.id)
         .then((Event) => {
             Event.fullName = req.body.fullName;
+            Event.address = req.body.address;
             Event.serviceType = req.body.serviceType;
             Event.binSize = req.body.binSize;
             Event.pickupTime = req.body.pickupTime;
