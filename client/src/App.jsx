@@ -16,6 +16,7 @@ function App() {
         <Route path="/edit/:id" element={<EditEvent />} />
         <Route path="/delete/:id" element={<DeleteEvent />} />
         <Route path="/contactus" element={<ContactUs />} />
+
       </Routes>
     </BrowserRouter>
   );
